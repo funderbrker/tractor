@@ -1,13 +1,8 @@
 # Tractor
-Tractor is a generalized system for EIP-712 signing and verification on the EVM. Code can be trivially implemented by
-independent protocols.
+Tractor is a system integrated into Beanstalk that allows for generalized sequences of instructions to be encoded, using EIP-712 signing and verification, on the EVM. The core of the code outlined here can be trivially expanded for use with any protocol.
 
-## Warning
-Code is currently untested. Typescript tests have not been updated to work with architecture changes.
-
-## Security Considertions
-- Signature Malleability: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/master/vulnerabilities/signature-malleability.md, https://twitter.com/gogotheauditor/status/1611667787759616000?s=20
-tldr: one set of signer + address can be valid with many signatures that are easy to generate given one example signature
-
-## Credit
-Much of the code was inspired and sourced written from [Beanstalk and beam00n](https://github.com/BeanstalkFarms/Beanstalk/pull/154).
+## Beanstalk
+An example of the system being expanded with protocol-specific functionality can be seen in Beanstalk. I led this integration and the relevant files are visible here.
+- https://github.com/BeanstalkFarms/Beanstalk/blob/master/protocol/contracts/libraries/LibTractor.sol
+- https://github.com/BeanstalkFarms/Beanstalk/blob/master/protocol/contracts/beanstalk/farm/TractorFacet.sol
+- https://github.com/BeanstalkFarms/Beanstalk/blob/master/protocol/test/foundry/farm/Tractor.t.sol
